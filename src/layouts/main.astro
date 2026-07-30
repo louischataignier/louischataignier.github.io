@@ -1,0 +1,79 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n'
+import SiteHeader from '@/components/SiteHeader.astro'
+import SiteFooter from '@/components/SiteFooter.astro'
+import { useTranslations, defaultLang } from '@/i18n'
+import '../styles/global.css'
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title = 'Louis Chataignier',
+  description = 'Site personnel de Louis Chataignier.',
+} = Astro.props
+
+const currentLocale = Astro.currentLocale ?? defaultLang
+const currentPath = Astro.url.pathname
+const t = useTranslations(currentLocale)
+
+// Strip base + locale prefix to get the page path for locale switching
+const base = import.meta.env.BASE_URL
+const basePath = (() => {
+  const pathWithoutBase = currentPath.startsWith(base)
+    ? '/' + currentPath.slice(base.length)
+    : currentPath
+  if (currentLocale !== defaultLang) {
+    const prefix = `/${currentLocale}`
+    const stripped = pathWithoutBase.startsWith(prefix)
+      ? pathWithoutBase.slice(prefix.length)
+      : pathWithoutBase
+    return stripped || '/'
+  }
+  return pathWithoutBase || '/'
+})()
+
+const frUrl = getRelativeLocaleUrl('fr', basePath)
+const enUrl = getRelativeLocaleUrl('en', basePath)
+
+const navItems = [
+  { label: t.nav.about,    href: getRelativeLocaleUrl(currentLocale, '/') },
+  { label: t.nav.research, href: getRelativeLocaleUrl(currentLocale, '/research') },
+  { label: t.nav.teaching, href: getRelativeLocaleUrl(currentLocale, '/teaching') },
+]
+---
+
+<html lang={currentLocale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="antialiased">
+    <div class="flex min-h-svh flex-col">
+      <SiteHeader
+        currentPath={currentPath}
+        lang={currentLocale}
+        navItems={navItems}
+        frUrl={frUrl}
+        enUrl={enUrl}
+      />
+      <main class="flex-1">
+        <slot />
+      </main>
+      <SiteFooter />
+    </div>
+  </body>
+</html>
