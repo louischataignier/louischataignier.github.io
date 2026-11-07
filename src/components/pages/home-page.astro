@@ -13,13 +13,44 @@ const supervisorLink = (href: string, name: string) =>
 const introHtml = t.home.introduction
   .replace(
     "{{supervisor1}}",
-    supervisorLink("https://www.math.univ-toulouse.fr/~mpain/", "Michel Pain"),
+    supervisorLink(
+      "https://www.math.univ-toulouse.fr/~mpain/",
+      "Michel Pain",
+    ),
   )
   .replace(
     "{{supervisor2}}",
     supervisorLink(
       "https://www.math.univ-toulouse.fr/~pmaillar/",
       "Pascal Maillard",
+    ),
+  )
+  .replace(
+    "{{institution1}}",
+    supervisorLink(
+      "https://www.math.univ-toulouse.fr/en/",
+      "Institut de Mathématiques de Toulouse",
+    ),
+  )
+  .replace(
+    "{{institution2}}",
+    supervisorLink(
+      "https://www.utoulouse.fr/en",
+      "Université de Toulouse",
+    ),
+  )
+  .replace(
+    "{{institution3}}",
+    supervisorLink(
+      "http://english.amss.cas.cn/",
+      "Academy of Mathematics and Systems Science",
+    ),
+  )
+  .replace(
+    "{{institution4}}",
+    supervisorLink(
+      "https://english.cas.cn/",
+      "Chinese Academy of Sciences",
     ),
   );
 
