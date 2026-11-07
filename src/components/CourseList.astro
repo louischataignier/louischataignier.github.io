@@ -1,4 +1,6 @@
 ---
+import { institute1 } from "../i18n/institutions"
+
 interface CourseData {
   titleKey:
     | "introductionToProbability"
@@ -7,7 +9,6 @@ interface CourseData {
     | "oralExams"
   year: string
   level?: string
-  role: "instructor" | "ta" | "examiner"
   institution: string
 }
 
@@ -29,68 +30,53 @@ const courseTitles: Record<string, Record<CourseData["titleKey"], string>> = {
 const courseData: CourseData[] = [
   {
     titleKey: "measureTheory",
-    year: "2025–2026",
-    level: "L3, TD (56h)",
-    role: "ta",
-    institution: "{{institute2}}",
-  },
-  {
-    titleKey: "introductionToProbability",
-    year: "2024–2025",
-    level: "L2, TD/TP (38h)",
-    role: "ta",
-    institution: "{{institute2}}",
+    year: "2025–2026 Sem 2",
+    level: "L3, TD (28h)",
+    institution: institute2,
   },
   {
     titleKey: "measureTheory",
-    year: "2024–2025",
+    year: "2025–2026 Sem 1",
     level: "L3, TD (28h)",
-    role: "ta",
-    institution: "{{institute2}}",
+    institution: institute2,
   },
   {
     titleKey: "introductionToProbability",
-    year: "2023–2024",
+    year: "2024–2025 Sem 2",
+    level: "L2, TD/TP (38h)",
+    institution: institute2,
+  },
+  {
+    titleKey: "measureTheory",
+    year: "2024–2025 Sem 1",
+    level: "L3, TD (28h)",
+    institution: institute2,
+  },
+  {
+    titleKey: "introductionToProbability",
+    year: "2023–2024 Sem 2",
     level: "L2, TD/TP (46h)",
-    role: "ta",
-    institution: "{{institute2}}",
+    institution: institute2,
   },
   {
     titleKey: "introductionToStatistics",
-    year: "2023–2024",
+    year: "2023–2024 Sem 1",
     level: "L2, lecture/TD (18h)",
-    role: "ta",
-    institution: "{{institute2}}",
+    institution: institute2,
   },
   {
     titleKey: "oralExams",
     year: "2022–2023",
-    role: "examiner",
-    institution: "Lycée du Parc, Lyon",
+    institution: institute0,
   },
 ]
 
 interface Props {
-  roleLabels: {
-    instructor: string
-    ta: string
-    examiner?: string
-  }
   lang?: string
 }
 
-const { roleLabels, lang = "fr" } = Astro.props
+const { lang = "fr" } = Astro.props
 const titles = courseTitles[lang] ?? courseTitles.fr
-
-const extraRoleLabels = {
-  en: "Oral examiner",
-  fr: "Interrogateur",
-}
-
-const examinerLabel =
-  roleLabels.examiner ??
-  extraRoleLabels[lang as keyof typeof extraRoleLabels] ??
-  extraRoleLabels.fr
 ---
 
 <div class="flex flex-col gap-5">
@@ -103,24 +89,9 @@ const examinerLabel =
           </h2>
           <p class="text-sm text-muted-foreground">{course.institution}</p>
         </div>
-        <div class="flex items-center gap-2 mt-1 sm:mt-0 shrink-0">
-          <span
-            data-slot="badge"
-            data-variant={course.role === "instructor" ? "default" : "secondary"}
-            class={course.role === "instructor"
-              ? "inline-flex items-center justify-center rounded-md border border-transparent px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 overflow-hidden transition-[color,box-shadow] bg-primary text-primary-foreground"
-              : "inline-flex items-center justify-center rounded-md border border-transparent px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 overflow-hidden transition-[color,box-shadow] bg-secondary text-secondary-foreground"}
-          >
-            {course.role === "instructor"
-              ? roleLabels.instructor
-              : course.role === "ta"
-                ? roleLabels.ta
-                : examinerLabel}
-          </span>
-          <span class="text-sm text-muted-foreground whitespace-nowrap">
-            {course.year}{course.level ? ` · ${course.level}` : ""}
-          </span>
-        </div>
+        <span class="text-sm text-muted-foreground whitespace-nowrap">
+          {course.year}{course.level ? ` · ${course.level}` : ""}
+        </span>
       </div>
     </div>
   ))}
