@@ -13,8 +13,8 @@ export default {
   },
   home: {
     welcome: 'Welcome',
-    job: 'Posdoctoral researcher in mathematics',
-    localisation: '{{institution3}}',
+    job: 'Postdoctoral researcher in mathematics',
+    localisation: 'Academy of Mathematics and Systems Science',
     introduction: `I am a postdoctoral researcher at the {{institution3}} ({{institution4}}) since October 2026, under the supervision of Zhan Shi.
 
 I completed my PhD at the {{institution1}} ({{institution2}}) between 2023 and 2026, under the supervision of {{supervisor1}} and {{supervisor2}}.
