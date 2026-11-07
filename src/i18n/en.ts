@@ -9,23 +9,26 @@ export default {
     fr: 'Français',
   },
   site: {
-    mail: 'louis.chataignier@math.univ-toulouse.fr',
+    mail: 'louis.chataignier@amss.ac.cn',
   },
   home: {
     welcome: 'Welcome',
-    job: 'PhD student in mathematics',
-    localisation: 'Institut de Mathématiques de Toulouse',
-    introduction:
-      'I am a PhD student at the Institut de Mathématiques de Toulouse under the supervision of {{supervisor1}} and {{supervisor2}}. My research focuses on probability theory, specifically branching processes such as branching Brownian motion and branching random walks.',
+    job: 'Posdoctoral researcher in mathematics',
+    localisation: '{{institution3}}',
+    introduction: `I am a postdoctoral researcher at the {{institution3}} ({{institution4}}) since October 2026, under the supervision of Zhan Shi.
+
+I completed my PhD at the {{institution1}} ({{institution2}}) between 2023 and 2026, under the supervision of {{supervisor1}} and {{supervisor2}}.
+
+My research focuses on probability theory, with a particular interest in branching processes and statistical physics.`,
     downloadCv: 'Download CV',
   },
   research: {
     heading: 'Research',
-    description: 'Research publications and preprints in probability theory.',
+    description: 'Research publications and preprints',
   },
   teaching: {
     heading: 'Teaching',
-    description: 'Teaching activities at the Institut de Mathématiques de Toulouse.',
+    description: 'Teaching activities',
     roles: {
       instructor: 'Instructor',
       ta: 'Teaching Assistant',
