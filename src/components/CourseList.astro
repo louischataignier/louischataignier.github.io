@@ -1,8 +1,13 @@
 ---
 interface CourseData {
-  titleKey: "introductionToProbability" | "measureTheory" | "introductionToStatistics"
-  level: string
-  role: "instructor" | "ta"
+  titleKey:
+    | "introductionToProbability"
+    | "measureTheory"
+    | "introductionToStatistics"
+    | "oralExams"
+  year: string
+  level?: string
+  role: "instructor" | "ta" | "examiner"
   institution: string
 }
 
@@ -11,48 +16,81 @@ const courseTitles: Record<string, Record<CourseData["titleKey"], string>> = {
     introductionToProbability: "Introduction to probability theory",
     measureTheory: "Measure theory",
     introductionToStatistics: "Introduction to statistics",
+    oralExams: "Weekly oral exams in preparatory classes",
   },
   fr: {
     introductionToProbability: "Introduction aux probabilités",
     measureTheory: "Théorie de la mesure",
     introductionToStatistics: "Introduction aux statistiques",
+    oralExams: "Interrogations orales en classes préparatoires",
   },
 }
 
 const courseData: CourseData[] = [
   {
-    titleKey: "introductionToProbability",
-    level: "L2, TD/TP (46h)",
+    titleKey: "measureTheory",
+    year: "2025–2026",
+    level: "L3, TD (56h)",
     role: "ta",
-    institution: "Institut de Mathématiques de Toulouse",
+    institution: "{{institute2}}",
+  },
+  {
+    titleKey: "introductionToProbability",
+    year: "2024–2025",
+    level: "L2, TD/TP (38h)",
+    role: "ta",
+    institution: "{{institute2}}",
   },
   {
     titleKey: "measureTheory",
+    year: "2024–2025",
     level: "L3, TD (28h)",
     role: "ta",
-    institution: "Institut de Mathématiques de Toulouse",
+    institution: "{{institute2}}",
   },
   {
     titleKey: "introductionToProbability",
+    year: "2023–2024",
     level: "L2, TD/TP (46h)",
     role: "ta",
-    institution: "Institut de Mathématiques de Toulouse",
+    institution: "{{institute2}}",
   },
   {
     titleKey: "introductionToStatistics",
+    year: "2023–2024",
     level: "L2, lecture/TD (18h)",
     role: "ta",
-    institution: "Institut de Mathématiques de Toulouse",
+    institution: "{{institute2}}",
+  },
+  {
+    titleKey: "oralExams",
+    year: "2022–2023",
+    role: "examiner",
+    institution: "Lycée du Parc, Lyon",
   },
 ]
 
 interface Props {
-  roleLabels: { instructor: string; ta: string }
+  roleLabels: {
+    instructor: string
+    ta: string
+    examiner?: string
+  }
   lang?: string
 }
 
 const { roleLabels, lang = "fr" } = Astro.props
 const titles = courseTitles[lang] ?? courseTitles.fr
+
+const extraRoleLabels = {
+  en: "Oral examiner",
+  fr: "Interrogateur",
+}
+
+const examinerLabel =
+  roleLabels.examiner ??
+  extraRoleLabels[lang as keyof typeof extraRoleLabels] ??
+  extraRoleLabels.fr
 ---
 
 <div class="flex flex-col gap-5">
@@ -73,10 +111,14 @@ const titles = courseTitles[lang] ?? courseTitles.fr
               ? "inline-flex items-center justify-center rounded-md border border-transparent px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 overflow-hidden transition-[color,box-shadow] bg-primary text-primary-foreground"
               : "inline-flex items-center justify-center rounded-md border border-transparent px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 overflow-hidden transition-[color,box-shadow] bg-secondary text-secondary-foreground"}
           >
-            {course.role === "instructor" ? roleLabels.instructor : roleLabels.ta}
+            {course.role === "instructor"
+              ? roleLabels.instructor
+              : course.role === "ta"
+                ? roleLabels.ta
+                : examinerLabel}
           </span>
           <span class="text-sm text-muted-foreground whitespace-nowrap">
-            {course.level}
+            {course.year}{course.level ? ` · ${course.level}` : ""}
           </span>
         </div>
       </div>
