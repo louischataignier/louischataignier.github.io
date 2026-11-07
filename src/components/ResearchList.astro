@@ -4,44 +4,96 @@ interface Publication {
   authors: string
   venue: string
   abstract: string
-  tags: string[]
+  tags?: string[]
   link?: string
 }
 
 const publicationsByLang: Record<string, Publication[]> = {
   en: [
     {
+      title: "Almost sure path localisation for the derivative martingale of branching Brownian motion",
+      authors: "Julien Berestycki, Louis Chataignier, Gabriel Flath",
+      venue: "Preprint (2026), arXiv:2608.06263",
+      abstract: "The evolution of the front of branching Brownian motion is determined by the limit of the derivative martingale. In this work, we characterise which particles contribute to this limit. Precisely, we establish a sharp almost sure path localisation result which shows that the limit is determined by those particles whose trajectory stays within a thin tube at distance $s^{1/2}$ from the extremal particle.",
+      link: "https://arxiv.org/abs/2608.06263",
+    },
+    {
+      title: "Upper moderate deviation probabilities for the maximum of a branching random walk",
+      authors: "Louis Chataignier, Lianghui Luo",
+      venue: "Preprint (2026), arXiv:2601.08766",
+      abstract: "Consider $M_n$ the maximal position at generation $n$ of a supercritical branching random walk. In 2013, Aïdékon (2013) obtained and described the convergence in law, as time $n$ goes to infinity, of $M_n-m_n$, where $m_n$ is an explicit function. Equivalently, he identified the limit of $\mathbb{P}(M_n > m_n + x)$, for any $x \in \mathbb{R}$. More recently, Luo (2025) gave an asymptotic equivalent for the upper large deviation probability, that is $\mathbb{P}(M_n > m_n + xn)$, for $x > 0$. In this work, we study an intermediate regime, called upper moderate deviation. We obtain, under close-to-optimal integrability conditions, an asymptotic equivalent for $\mathbb{P}(M_n > m_n + x_n)$, where $x_n$ is such that $x_n \to \infty$ and $x_n = O(\sqrt{n})$. Our proof is based on a strategy due to Bramson, Ding, and Zeitouni (2016). As a byproduct, we obtain information about the typical behavior of particles contributing to such deviations. Finally, we apply our main result to show the convergence in law of the centered maximum of a two-speed branching random walk in the mean regime and describe its limit.",
+      link: "https://arxiv.org/abs/2601.08766",
+    },
+    {
       title: "Asymptotics of the overlap distribution of branching Brownian motion at high temperature",
       authors: "Louis Chataignier, Michel Pain",
-      venue: "arXiv:2407.21014",
-      abstract: "At high temperature, the overlap of two particles chosen independently according to the Gibbs measure of the branching Brownian motion converges to zero as time goes to infinity. We investigate the precise decay rate of the probability to obtain an overlap greater than a, for some a > 0, in the whole subcritical phase of inverse temperatures β ∈ [0, βc). Moreover, we study this probability both conditionally on the branching Brownian motion and non-conditionally. Two sub-phases of inverse temperatures appear, but surprisingly the threshold is not the same in both cases.",
-      tags: ["Branching Brownian Motion", "Overlap Distribution", "Probability Theory"],
-      link: "https://arxiv.org/pdf/2407.21014",
+      venue: "Annales Henri Lebesgue, 9 (2026), 371-421",
+      abstract: "At high temperature, the overlap of two particles chosen independently according to the Gibbs measure of the branching Brownian motion converges to zero as time goes to infinity. We investigate the precise decay rate of the probability to obtain an overlap greater than $a$, for some $a>0$, in the whole subcritical phase of inverse temperatures $\beta \in [0,\beta_c)$. Moreover, we study this probability both conditionally on the branching Brownian motion and non-conditionally. Two sub-phases of inverse temperatures appear, but surprisingly the threshold is not the same in both cases.",
+      link: "https://ahl.centre-mersenne.org/item/AHL_2026__9__371_0/",
+    },
+    {
+      title: "Upper moderate deviation probabilities for the maximum of branching Brownian motion",
+      authors: "Louis Chataignier",
+      venue: "Electronic Communications in Probability, 30 (2025), 1-14",
+      abstract: "It is known from Bramson (1983) that the maximum of branching Brownian motion at time $t$ is asymptotically around an explicit function $m_t$, which involves a first ballistic order and a logarithmic correction. In this paper, we give an asymptotic equivalent for its upper moderate deviation probability, that is, the probability that the maximum achieves $m_t + x_t$ at time $t$, where $1 \ll x_t \ll t$. We adopt a probabilistic approach that employs a modified version of the second moment method. As a byproduct, we obtain information about the typical behavior of particles contributing to such deviations.",
+      link: "https://doi.org/10.1214/25-ECP737",
+    },
+    {
+      title: "On particle trajectories and genealogy in branching Brownian motion and branching random walk",
+      authors: "Louis Chataignier",
+      venue: "PhD thesis (2026), NNT: 2026UTLSS044",
+      abstract: "Branching Brownian motion and branching random walk are stochastic processes, the former in continuous time, the latter in discrete time, that describe the evolution of a population of particles. These particles are assumed to reproduce and move independently on the real line. In this thesis, we study the asymptotic behavior of the two processes as time t tends to infinity, through three main themes, described below. First, we consider the following question, motivated by statistical physics. If two particles are drawn independently from the population at time t, according to a high-temperature Gibbs law, what is, for 0 < a < 1, the probability that their most recent common ancestor has lived after time at? In a joint work with Michel Pain, we provide precise estimates for this probability in the setting of branching Brownian motion, conditionally on the process and non-conditionally. Two temperature sub-phases arise, but surprisingly, the threshold is not the same in both cases. Next, we study upper deviations of the maximal particle, that is, the event where its position is at distance x above its expectation, where x grows to infinity with time t. Since the regime where x is proportional to t has already been treated in the literature, we focus on the regime where x is much smaller than t, called moderate. In the case of branching Brownian motion, we provide an asymptotic equivalent for the upper moderate deviation probability. As a byproduct of our analysis, we obtain information on the trajectorial and genealogical behavior contributing to such deviations. In a joint work with Lianghui Luo, we also study the upper moderate deviation probabilities in the framework of branching random walk. Our assumptions on the reproduction law are very general, which leads us to state an analogous result for the sub-regime where x is at most of order √t. We further apply this result to prove the convergence in law of the centered maximum of a two-speed branching random walk and to describe its limit. Finally, in a joint work with Gabriel Flath and Julien Berestycki, we investigate the trajectories drawn by the ancestors of front particles, that is, particles at distance of order √t from the maximum. We provide a precise description of such trajectories in the form of an almost sure convergence result.",
+      link: "https://utheme.utoulouse.fr/s/fr/item/46863",
     },
     {
       title: "Additive martingales of the branching Brownian motion",
       authors: "Louis Chataignier",
-      venue: "Master's thesis, April–August 2023. arXiv:2407.20227",
-      abstract: "In this thesis, we study asymptotic properties of the standard branching Brownian motion, with a specific emphasis on the additive martingales at high temperature. We establish various convergence results that enhance our understanding of the model, including the determination of particles contributing to the additive martingales, the description of the fluctuations of these martingales around their limits, and an approximation of the overlap distribution. Remarkably, we identify a specific regime in which stable distributions emerge.",
-      tags: ["Branching Brownian Motion", "Martingales", "Probability Theory"],
+      venue: "Master thesis (2023), arXiv:2407.20227",
+      abstract: "In this thesis, we study asymptotic properties of the standard branching Brownian motion, with a specific emphasis on the additive martingales at high temperature. We start by presenting classic and fundamental tools for our investigation. Subsequently, we establish various convergence results that enhance our understanding of the model. In particular, these results include the determination of particles contributing to the additive martingales, the description of the fluctuations of these martingales around their limits, and an approximation of the so-called overlap distribution. Regarding the latter, we believe this is the first time that such an approximation is given. Remarkably, we identify a specific regime in which stable distributions emerge.",
       link: "https://arxiv.org/abs/2407.20227",
     },
   ],
   fr: [
     {
-      title: "Asymptotics of the overlap distribution of branching Brownian motion at high temperature",
-      authors: "Louis Chataignier, Michel Pain",
-      venue: "arXiv:2407.21014",
-      abstract: "À haute température, l'overlap de deux particules choisies indépendamment selon la mesure de Gibbs du mouvement brownien branchant converge vers zéro quand le temps tend vers l'infini. Nous étudions la vitesse de décroissance précise de la probabilité d'obtenir un overlap supérieur à a, pour tout a > 0, dans toute la phase sous-critique des températures inverses β ∈ [0, βc). De plus, nous étudions cette probabilité conditionnellement au mouvement brownien branchant ainsi que non-conditionnellement. Deux sous-phases de températures inverses apparaissent, mais de façon surprenante, le seuil diffère dans les deux cas.",
-      tags: ["Mouvement Brownien Branchant", "Distribution des Overlaps", "Théorie des Probabilités"],
-      link: "https://arxiv.org/pdf/2407.21014",
+      title: "Localisation trajectorielle presque sûre pour la martingale dérivée du mouvement brownien branchant",
+      authors: "Julien Berestycki, Louis Chataignier, Gabriel Flath",
+      venue: "Prépublication (2026), arXiv:2608.06263",
+      abstract: "L'évolution du front du mouvement brownien branchant est déterminée par la limite de la martingale dérivée. Dans cet article, nous caractérisons les particules qui contribuent à cette limite. Plus précisément, nous établissons un résultat optimal de localisation trajectorielle presque sûre qui montre que cette limite est déterminée par les particules dont la trajectoire reste dans un tube étroit à distance $s^{1/2}$ de la particule extrémale.",
+      link: "https://arxiv.org/abs/2608.06263",
     },
     {
-      title: "Additive martingales of the branching Brownian motion",
+      title: "Probabilités de déviations modérées supérieures pour le maximum d'une marche aléatoire branchante",
+      authors: "Louis Chataignier, Lianghui Luo",
+      venue: "Prépublication (2026), arXiv:2601.08766",
+      abstract: "Considérons $M_n$ la position maximale à la génération $n$ d'une marche aléatoire branchante surcritique. En 2013, Aïdékon (2013) a obtenu et décrit la convergence en loi, quand le temps $n$ tend vers l'infini, de $M_n-m_n$, où $m_n$ est une fonction explicite. De manière équivalente, il a identifié la limite de $\mathbb{P}(M_n > m_n + x)$, pour tout $x \in \mathbb{R}$. Plus récemment, Luo (2025) a donné un équivalent asymptotique pour la probabilité de grande déviation supérieure, c'est-à-dire $\mathbb{P}(M_n > m_n + xn)$, pour $x>0$. Dans cet article, nous étudions un régime intermédiaire, appelé régime de déviation modérée supérieure. Nous obtenons, sous des conditions d'intégrabilité presque optimales, un équivalent asymptotique pour $\mathbb{P}(M_n > m_n + x_n)$, où $x_n$ est tel que $x_n \to \infty$ et $x_n = O(\sqrt{n})$. Notre démonstration repose sur une stratégie due à Bramson, Ding et Zeitouni (2016). Comme dérivé de notre analyse, nous obtenons des informations sur le comportement typique des particules qui contribuent à de telles déviations. Enfin, nous appliquons notre résultat principal pour démontrer la convergence en loi du maximum centré d'une marche aléatoire branchante à deux vitesses dans le régime moyen et décrire sa loi limite.",
+      link: "https://arxiv.org/abs/2601.08766",
+    },
+    {
+      title: "Asymptotiques de la distribution de l'overlap du mouvement brownien branchant à haute température",
+      authors: "Louis Chataignier, Michel Pain",
+      venue: "Annales Henri Lebesgue, 9 (2026), 371-421",
+      abstract: "À haute température, l'overlap de deux particules tirées indépendamment selon la mesure de Gibbs d'un mouvement brownien branchant converge vers zéro quand le temps tend vers l'infini. Nous obtenons la vitesse de décroissance précise de la probabilité d'obtenir un overlap plus grand que $a$, pour un certain $a>0$, dans toute la phase sous-critique pour la température inverse $\beta \in [0,\beta_c)$. En outre, nous étudions cette probabilité à la fois conditionnellement au mouvement brownien branchant et non-conditionnellement. Deux sous-phases pour la température inverse apparaissent, mais étonnamment le seuil n'est pas le même dans les deux cas.",
+      link: "https://ahl.centre-mersenne.org/item/AHL_2026__9__371_0/",
+    },
+    {
+      title: "Probabilités de déviations modérées supérieures pour le maximum du mouvement brownien branchant",
       authors: "Louis Chataignier",
-      venue: "Mémoire de master, avril–août 2023. arXiv:2407.20227",
-      abstract: "Dans ce mémoire, nous étudions les propriétés asymptotiques du mouvement brownien branchant standard, en mettant l'accent sur les martingales additives à haute température. Nous établissons divers résultats de convergence : la détermination des particules contribuant aux martingales additives, la description de leurs fluctuations autour de leurs limites, et une approximation de la distribution des overlaps. De façon remarquable, nous identifions un régime spécifique dans lequel des distributions stables émergent.",
-      tags: ["Mouvement Brownien Branchant", "Martingales", "Théorie des Probabilités"],
+      venue: "Electronic Communications in Probability, 30 (2025), 1-14",
+      abstract: "Il est connu depuis Bramson (1983) que le maximum du mouvement brownien branchant au temps $t$ est asymptotiquement proche d'une fonction explicite $m_t$, composée d'un terme balistique et d'un correctif logarithmique. Dans cet article, nous donnons un équivalent asymptotique de sa probabilité de déviation modérée supérieure, c'est-à-dire la probabilité que le maximum atteigne $m_t + x_t$ au temps $t$, où $1 \ll x_t \ll t$. Nous adoptons une approche probabiliste qui repose sur une version modifiée de la méthode de second moment. Comme dérivé de notre analyse, nous obtenons des informations sur le comportement typique des particules qui contribuent à de telles déviations.",
+      link: "https://doi.org/10.1214/25-ECP737",
+    },
+    {
+      title: "Sur les trajectoires et la généalogie des particules du mouvement brownien branchant et de la marche aléatoire branchante",
+      authors: "Louis Chataignier",
+      venue: "Thèse de doctorat (2026), NNT: 2026UTLSS044",
+      abstract: "Le mouvement brownien branchant et la marche aléatoire branchante sont des processus stochastiques, le premier en temps continu, le second en temps discret, qui décrivent l'évolution d'une population de particules. On suppose que ces particules se reproduisent et se déplacent indépendamment sur la droite réelle. Dans cette thèse, nous étudions le comportement asymptotique des deux processus lorsque le temps t tend vers l'infini, à travers trois thématiques principales, décrites ci-dessous. Tout d'abord, nous considérons la question suivante, motivée par la physique statistique. Si deux particules sont tirées indépendamment dans la population au temps t, selon une loi de Gibbs à haute température, quelle est, pour 0 < a < 1, la probabilité que leur plus récent ancêtre commun ait vécu après le temps at ? Dans un travail en collaboration avec Michel Pain, nous obtenons des estimées précises pour cette probabilité dans le cadre du mouvement brownien branchant, conditionnellement au processus et non conditionnellement. Deux sous-phases de température apparaissent, mais de manière surprenante, le seuil n'est pas le même dans les deux cas. Ensuite, nous étudions les déviations supérieures de la particule maximale, c'est-à-dire l'événement où sa position se situe à une distance x au-dessus de son espérance, où x croît vers l'infini avec le temps t. Le régime où x est proportionnel à t étant déjà traité dans la littérature, nous nous concentrons sur le régime où x est négligeable par rapport à t, dit modéré. Dans le cas du mouvement brownien branchant, nous obtenons un équivalent asymptotique pour la probabilité de déviation modérée supérieure. Comme dérivé de notre analyse, nous obtenons des informations sur le comportement trajectoriel et généalogique contribuant à de telles déviations. Dans un travail en collaboration avec Lianghui Luo, nous étudions également les probabilités de déviation modérée supérieure dans le cadre de la marche aléatoire branchante. Nos hypothèses sur la loi de reproduction sont très générales, ce qui nous conduit à énoncer un résultat analogue pour le sous-régime où x est au plus d'ordre √t. De plus, nous appliquons ce résultat pour démontrer la convergence en loi du maximum centré d'une marche aléatoire branchante à deux vitesses et pour décrire sa limite. Enfin, dans un travail en collaboration avec Gabriel Flath et Julien Berestycki, nous étudions les trajectoires suivies par les ancêtres des particules du front, c'est-à-dire les particules situées à une distance d'ordre √t du maximum. Nous obtenons une description précise de telles trajectoires sous la forme d'un résultat de convergence presque sûre.",
+      link: "https://utheme.utoulouse.fr/s/fr/item/46863",
+    },
+    {
+      title: "Martingales additives du mouvement brownien branchant",
+      authors: "Louis Chataignier",
+      venue: "Mémoire de master (2023), arXiv:2407.20227",
+      abstract: "Dans ce mémoire, nous étudions les propriétés asymptotiques du mouvement brownien branchant standard, en mettant particulièrement l'accent sur les martingales additives à haute température. Nous commençons par présenter des outils classiques et fondamentaux pour notre analyse. Ensuite, nous établissons divers résultats de convergence qui apportent une meilleure compréhension du modèle. Cela comprend notamment la détermination des particules contribuant aux martingales additives, la description des fluctuations de ces martingales autour de leurs limites et une approximation de l'overlap distribution. Concernant ce dernier résultat, nous pensons qu'une telle approximation est inédite. De façon notable, nous identifions un régime spécifique dans lequel des lois stables apparaissent.",
       link: "https://arxiv.org/abs/2407.20227",
     },
   ],
@@ -82,17 +134,19 @@ const publications = publicationsByLang[lang] ?? publicationsByLang.fr
             {pub.abstract}
           </p>
 
-          <div class="flex flex-wrap gap-1.5">
-            {pub.tags.map((tag) => (
-              <span
-                data-slot="badge"
-                data-variant="secondary"
-                class="inline-flex items-center justify-center rounded-md border border-transparent px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 overflow-hidden transition-[color,box-shadow] bg-secondary text-secondary-foreground"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+          {pub.tags && pub.tags.length > 0 && (
+            <div class="flex flex-wrap gap-1.5">
+              {pub.tags.map((tag) => (
+                <span
+                  data-slot="badge"
+                  data-variant="secondary"
+                  class="inline-flex items-center justify-center rounded-md border border-transparent px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 overflow-hidden transition-[color,box-shadow] bg-secondary text-secondary-foreground"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
         </article>
       </a>
 
