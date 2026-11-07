@@ -17,7 +17,7 @@ export default {
     welcome: 'Bienvenue',
     job: 'Chercheur postdoctoral en mathématiques',
     localisation: 'Academy of Mathematics and Systems Science',
-    introduction: `Je suis chercheur postdoctoral à l'{{institution3}} ({{institution4}}) depuis octobre 2026, sous la supervision de Zhan Shi.
+    introduction: `Je suis chercheur postdoctoral au {{institution3}} ({{institution4}}) depuis octobre 2026, sous la supervision de Zhan Shi.
     
     J'ai effectué mon doctorat à l'{{institution1}} ({{institution2}}) entre 2023 et 2026, sous la direction de {{supervisor1}} et {{supervisor2}}.
     
