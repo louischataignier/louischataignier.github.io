@@ -19,7 +19,7 @@ export default {
     localisation: 'Academy of Mathematics and Systems Science',
     introduction: `Je suis chercheur postdoctoral à l'{{institution3}} ({{institution4}}) depuis octobre 2026, sous la supervision de Zhan Shi.
     
-    J'ai effectué mon doctorat à l'{{institution1}} ({{institution2}}) entre 2023 et 2026, sous la direction de {{supervisor1}} et {{supervisor1}}.
+    J'ai effectué mon doctorat à l'{{institution1}} ({{institution2}}) entre 2023 et 2026, sous la direction de {{supervisor1}} et {{supervisor2}}.
     
     Mes recherches portent sur la théorie des probabilités, avec un intérêt particulier pour les processus de branchement et la physique statistique.`,
     downloadCv: 'Télécharger le CV',
