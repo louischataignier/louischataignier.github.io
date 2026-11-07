@@ -30,37 +30,37 @@ const courseTitles: Record<string, Record<CourseData["titleKey"], string>> = {
 const courseData: CourseData[] = [
   {
     titleKey: "measureTheory",
-    year: "2025–2026 Sem 2",
+    year: "Sem 2, 2025–2026",
     level: "L3, TD (28h)",
     institution: "Université de Toulouse",
   },
   {
     titleKey: "measureTheory",
-    year: "2025–2026 Sem 1",
+    year: "Sem 1, 2025–2026",
     level: "L3, TD (28h)",
     institution: "Université de Toulouse",
   },
   {
     titleKey: "introductionToProbability",
-    year: "2024–2025 Sem 2",
+    year: "Sem 2, 2024–2025",
     level: "L2, TD/TP (38h)",
     institution: "Université de Toulouse",
   },
   {
     titleKey: "measureTheory",
-    year: "2024–2025 Sem 1",
+    year: "Sem 1, 2024–2025",
     level: "L3, TD (28h)",
     institution: "Université de Toulouse",
   },
   {
     titleKey: "introductionToProbability",
-    year: "2023–2024 Sem 2",
+    year: "Sem 2, 2023–2024",
     level: "L2, TD/TP (46h)",
     institution: "Université de Toulouse",
   },
   {
     titleKey: "introductionToStatistics",
-    year: "2023–2024 Sem 1",
+    year: "Sem 1, 2023–2024",
     level: "L2, lecture/TD (18h)",
     institution: "Université de Toulouse",
   },
@@ -89,9 +89,16 @@ const titles = courseTitles[lang] ?? courseTitles.fr
           </h2>
           <p class="text-sm text-muted-foreground">{course.institution}</p>
         </div>
-        <span class="text-sm text-muted-foreground whitespace-nowrap">
-          {course.year}{course.level ? ` · ${course.level}` : ""}
-        </span>
+        <div class="flex items-center gap-4 sm:gap-6">
+          {course.level && (
+            <span class="text-sm text-muted-foreground whitespace-nowrap">
+              {course.level}
+            </span>
+          )}
+          <span class="text-sm text-muted-foreground whitespace-nowrap">
+            {course.year}
+          </span>
+        </div>
       </div>
     </div>
   ))}
