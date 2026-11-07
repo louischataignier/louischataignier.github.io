@@ -11,23 +11,26 @@ export default {
     fr: 'Français',
   },
   site: {
-    mail: 'louis.chataignier@math.univ-toulouse.fr',
+    mail: 'louis.chataignier@amss.ac.cn',
   },
   home: {
     welcome: 'Bienvenue',
-    job: 'Doctorant en mathématiques',
-    localisation: 'Institut de Mathématiques de Toulouse',
-    introduction:
-      "Je suis doctorant à l'Institut de Mathématiques de Toulouse sous la supervision de {{supervisor1}} et {{supervisor2}}. Mes recherches portent sur la théorie des probabilités, plus précisément les processus de branchement tels que le mouvement brownien branchant et les marches aléatoires branchantes.",
+    job: 'Chercheur postdoctoral en mathématiques',
+    localisation: '{{institution3}}',
+    introduction: `Je suis chercheur postdoctoral à l'{{institution3}} ({{institution4}}) depuis octobre 2026, sous la supervision de Zhan Shi.
+    
+    J'ai effectué mon doctorat à l'{{institution1}} ({{institution2}}) entre 2023 et 2026, sous la direction de {{supervisor1}} et {{supervisor1}}.
+    
+    Mes recherches portent sur la théorie des probabilités, avec un intérêt particulier pour les processus de branchement et la physique statistique.`,
     downloadCv: 'Télécharger le CV',
   },
   research: {
     heading: 'Recherche',
-    description: 'Publications et prépublications en théorie des probabilités.',
+    description: 'Publications et prépublications',
   },
   teaching: {
     heading: 'Enseignement',
-    description: "Activités d'enseignement à l'Institut de Mathématiques de Toulouse.",
+    description: "Activités d'enseignement",
     roles: {
       instructor: 'Chargé de cours',
       ta: "Assistant d'enseignement",
